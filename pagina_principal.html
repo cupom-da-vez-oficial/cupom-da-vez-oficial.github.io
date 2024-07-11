@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner {
+            width: 100%;
+            height: 50px;
+            background-image: url('images/logo.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .saldo-container {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 20px;
+            font-weight: bold;
+            color: #e7f52a;
+            z-index: 1000;
+        }
+
+        .main-container {
+            max-width: 600px;
+            width: 90%;
+            margin: 100px auto 20px; /* Ajuste a margem superior conforme necessário */
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .imagem-container {
+            margin-bottom: 20px;
+        }
+
+        .imagem-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"></div>
+    <div class="saldo-container">
+        Saldo Atual: R$ <span id="saldo">0</span>
+    </div>
+    <img src="imagem/bainer.png" alt="Logo" class="logo">
+    <div class="main-container">
+        <h2>novo cupom localizado</h2>
+        <div class="imagem-container">
+            <img id="imagemPrincipal" src="imagem/img1.png" alt="Imagem Padrão"> 
+        </div>
+        <form id="descricao-form">
+            <label for="descricao">Cupom:</label>
+            <br>
+            <input type="text" id="descricao" name="descricao" placeholder="Digite o numero acima..." required>
+            <br>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('descricao-form');
+        const saldoEl = document.getElementById('saldo');
+        const imagemPrincipal = document.getElementById('imagemPrincipal');
+        let saldo = 0;
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const descricao = document.getElementById('descricao').value;
+            saldo += 22.50; // Valor adicionado por descrição
+            saldoEl.textContent = saldo.toFixed(2);
+            form.reset();
+
+            // Lógica para mudar a imagem e redirecionar após o último cupom
+            if (descricao.includes('85829658')) {
+                imagemPrincipal.src = 'imagem/img2.png';
+            } else if (descricao.includes('94141786')) {
+                imagemPrincipal.src = 'imagem/img3.png';
+            } else if (descricao.includes('68579881')) {
+                imagemPrincipal.src = 'imagem/img4.png';
+            } else if (descricao.includes('72567623')) {
+                imagemPrincipal.src = 'imagem/img5.png';
+            } else if (descricao.includes('64377171')) {
+                imagemPrincipal.src = 'imagem/img6.png';
+                // Redirecionar para outra página
+                window.location.href = 'pagamento.html';
+            }
+        });
+    </script>
+</body>
+</html>

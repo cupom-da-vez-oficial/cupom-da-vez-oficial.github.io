@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Página</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(240, 191, 5); /* Define o fundo da página como amarelo */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px; /* Ajuste conforme necessário */
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: #fff; /* Fundo da área de conteúdo */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px; /* Espaçamento do topo */
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #080808;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #020202;
+            margin-bottom: 30px;
+        }
+
+        .btn-pulsating {
+            padding: 12px 24px;
+            background-color: #030303; /* Amarelo mais claro */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulsate 0.5s ease-in-out infinite; /* Animação pulsante */
+        }
+
+        .btn-pulsating:hover {
+            background-color: #020202; /* Cor do botão ao passar o mouse */
+        }
+
+        @keyframes pulsate {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <img src="imagem/x.png" alt="Logo da Empresa" class="logo">
+
+    <div >
+        <h1>Atenção!</h1>
+        <p>O seu saque já está QUASE finalizado!</p>
+        <p>Para continuar lucrando dentro do aplicativo e finalizar seu saque de R$ 349,00 reais agora!</p>
+        <p>Pague apenas uma taxa de cadastro.</p>
+        <p>Mas fique tranquilo, você receberá esse valor na sua conta após o saque!</p>
+       <a href="https://checkout.pepper.com.br/?p=144993&o=185483"> <button class="btn-pulsating">Concluir Saque</button> </a>
+    </div>
+</body>
+</html>
+
+

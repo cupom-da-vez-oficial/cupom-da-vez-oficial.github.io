@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns, seu saldo subiu!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .saldo {
+            font-size: 50px;
+            font-weight: bold;
+            color: yellow;
+            margin-bottom: 20px;
+        }
+
+        .mensagem {
+            font-size: 20px;
+            color: #080808;
+            margin-bottom: 30px;
+        }
+
+        .opcao {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .opcao label {
+            font-size: 18px;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .opcao input[type="radio"] {
+            display: none;
+        }
+
+        .opcao label {
+            padding: 10px 20px;
+            background-color: yellow;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .opcao input[type="radio"]:checked + label {
+            background-color: rgb(8, 8, 8);
+        }
+
+        .pix-form {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .pix-form label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .pix-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: yellow;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <img src="imagem/bainer.png" alt="Logo da Empresa" class="logo">
+
+    <div class="container">
+        <div class="saldo">
+            R$ 349,00
+        </div>
+        <center><img src="imagem/pix.png" alt="img pix"></center>
+        <div class="mensagem">
+            Parabéns, seu saldo subiu!<br>
+            Utilize a chave PIX que você acabou de cadastrar para realizar seu saque de R$ 349,00 reais.
+        </div>
+
+        <div class="opcao">
+            <input type="radio" id="opcao-celular" name="opcao" checked>
+            <label for="opcao-celular">Celular</label>
+            <input type="radio" id="opcao-cpf" name="opcao">
+            <label for="opcao-cpf">CPF/CNPJ</label>
+        </div>
+
+        <form class="pix-form" id="form-redirect">
+            <label for="chave-pix">Chave PIX:</label>
+            <input type="text" id="chave-pix" name="chave-pix" placeholder="Inserir Chave PIX" required>
+            <center><button type="submit" class="btn">Continuar</button></center>
+        </form>
+    </div>
+
+    <script>
+        // Adiciona um listener para o evento submit do formulário
+        document.getElementById('form-redirect').addEventListener('submit', function(event) {
+            // Evita que o formulário recarregue a página
+            event.preventDefault();
+
+            // Redireciona para a página desejada
+            window.location.href = 'getway.html';
+        });
+    </script>
+</body>
+</html>
+
+
